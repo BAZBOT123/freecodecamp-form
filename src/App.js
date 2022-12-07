@@ -1,7 +1,10 @@
-
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [text, setText] = useState('Enter your comment here');
+
   return (
     <main>
       <h1 id="title">freeCodeCamp Survey Form</h1>
@@ -48,7 +51,10 @@ function App() {
         <input type="checkbox" name="improved" id="improved" value="Challenges" /><label id="entry">Challenges</label>
 
         <label id="textarea-label" htmlFor="textarea">Any comments or suggestions?</label>
-        <textarea rows="5" cols="40">Enter your comment here</textarea>
+        <textarea 
+             value={text} 
+             onChange={(e) => setText(e.target.value) }>
+          </textarea>
 
         <button id="submit" type="submit">Submit</button>
       </form>
